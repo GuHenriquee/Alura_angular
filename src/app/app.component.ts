@@ -10,9 +10,9 @@ interface Contato{
     id:number
     nome: string
     telefone:string
-
 }
 
+import agenda from './agenda.json'
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -29,4 +29,11 @@ interface Contato{
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz'
+  contatos: Contato[] = agenda;
+
+  filtrarContatosPorLetraInicial(letra:string): Contato[]{
+    return this.contatos.filter(contato =>{
+        return contato.nome.toLocaleLowerCase().startsWith(letra)
+    })
+  }
 }

@@ -163,3 +163,15 @@ header .cabecalho-link {
     color: red;
     margin-bottom: 12px;
   }
+
+  .voltar button{
+    border: none;
+    display: flex;
+    align-items: center;
+    gap:0.3rem;
+    cursor: pointer;
+  }
+
+  .voltar span{
+    color: #0D6EFD;
+  }

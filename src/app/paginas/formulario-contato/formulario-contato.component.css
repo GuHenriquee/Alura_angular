@@ -165,6 +165,7 @@ header .cabecalho-link {
   }
 
   .voltar button{
+    background:none;
     border: none;
     display: flex;
     align-items: center;

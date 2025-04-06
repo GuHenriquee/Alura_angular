@@ -5,6 +5,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
+import { ContatoService } from '../../services/contato.service';
 
 @Component({
   selector: 'app-formulario-contato',
@@ -23,6 +24,10 @@ export class FormularioContatoComponent implements OnInit{
 
   contatoForm!: FormGroup;
 
+  constructor(private contratoService: ContatoService){
+
+  }
+
   ngOnInit() {
     this.inicializarFormulario();
   }
@@ -39,7 +44,8 @@ export class FormularioContatoComponent implements OnInit{
   }
 
   salvarContato() {
-    console.log(this.contatoForm.value);
+    const novoContato = this.contatoForm.value;
+    this.contratoService.salvarContato(novoContato);
   }
 
   cancelar() {

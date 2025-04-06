@@ -27,7 +27,6 @@ interface Contato {
     SeparadorComponent,
     ContatoComponent,
     FormsModule,
-    FormularioContatoComponent,
     RouterLink
   ],
   templateUrl: './lista-contatos.component.html',

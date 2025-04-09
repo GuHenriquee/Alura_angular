@@ -9,12 +9,7 @@ import { ContatoComponent } from '../../componentes/contato/contato.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { FormularioContatoComponent } from '../formulario-contato/formulario-contato.component';
 import { ContatoService } from '../../services/contato.service';
-
-interface Contato {
-  id: number
-  nome: string
-  telefone: string
-}
+import { Contato } from '../../componentes/contato/contato';
 
 
 @Component({
@@ -38,10 +33,12 @@ export class ListaContatosComponent implements OnInit{
 
   filtroPorTexto: string = ''
 
-  constructor(private contatoService: ContatoService) {}
+  constructor(private contatoService: ContatoService /*importando service*/) {}
 
   ngOnInit() {
-    this.contatos = this.contatoService.obterContatos();
+    this.contatoService.obterContatos().subscribe(listaContatos =>{
+        this.contatos = listaContatos;
+    });
   }
 
   // Remove os acentos de uma string

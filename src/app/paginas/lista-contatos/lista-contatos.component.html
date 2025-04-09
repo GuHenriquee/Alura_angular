@@ -20,7 +20,8 @@
             {{ letra }}
         </app-separador>
         @for (contato of filtrarContatosPorLetraInicial(letra);track contato.id){ <!--contato.id como identificador único de cada item.-->
-            <app-contato [nome] = "contato.nome" [telefone] = "contato.telefone"></app-contato><!--Usa "[]" para importar uma variável do TS-->
+            <app-contato [nome] = "contato.nome" [telefone] = "contato.telefone" [id]="contato.id!"></app-contato><!--Usa "[]" para importar uma variável do TS-->
         }
 }   
 </app-container>
+

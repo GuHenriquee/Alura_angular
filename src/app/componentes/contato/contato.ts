@@ -6,5 +6,6 @@ export interface Contato {
     aniversario?: string
     redes?: string
     observacoes?: string
+    avatar: string | ArrayBuffer /*Lidar com dados binarios */
 }
 

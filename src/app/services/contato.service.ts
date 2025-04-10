@@ -36,7 +36,7 @@ export class ContatoService {
     return this.http.put<Contato>(url,contato)
   }
 
-  editarOuSalvarContato(contato:Contato){
+  editarOuSalvarContato(contato:Contato):Observable<Contato>{
     if(contato.id){
         return this.editarContato(contato)
     }else{

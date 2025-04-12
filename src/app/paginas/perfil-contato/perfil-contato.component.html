@@ -1,21 +1,10 @@
 <app-container>
-    <header>
-        <section class="cabecalho-link">
-            <img src = "assets/logo.png">
-        </section>
-
-        <section class = "voltar">
-            <button routerLink="/lista-contatos">
-                <img src = "assets/arrow-left.png">
-                <span>Voltar</span>
-            </button>
-        </section>
-
-        <section class="cabecalho-link">
-            <img src = "assets/perfil-contato.png">
-        </section>
-        <h1>Perfil do contato</h1>
-    </header>
+    <app-cabecalho 
+    [telaInicial]= "false" 
+    [bannerSrc]= "'assets/perfil-contato.png'"
+    [titulo]= "'Perfil do contato!'"
+    ></app-cabecalho>
+    
 
   <section class="perfil">
     <div class="imagem-perfil">

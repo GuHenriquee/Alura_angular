@@ -1,5 +1,13 @@
 <header class = "cabecalho">
     <img src = "/assets/logo.png" class = "logo">
-    <img src = "/assets/banner.png" class= "banner">
-    <h1 class = "titulo">Organizar, <span> conecte,</span> simplifique</h1>
+    @if(!telaInicial){
+        <section class = "link">
+            <button routerLink="/lista-contatos">
+                <img src = "assets/arrow-left.png">
+                <span>Voltar</span>
+            </button>
+        </section>
+    }
+    <img [src] = "bannerSrc" class= "banner">
+    <h1 [innerText] = "titulo" class="titulo"></h1>
 </header>
